@@ -1,0 +1,7 @@
+{
+  "superHeros": [
+    { "Name": "Molecule Man", "secretIdentity": "Dan Jukes" },
+    { "Name": "Madam Uppercut", "secretIdentity": "Jane" },
+    { "Name": "Eternal Flame", "secretIdentity": "Unknown" }
+  ]
+}
