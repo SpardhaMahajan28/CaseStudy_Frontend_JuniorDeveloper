@@ -1,0 +1,75 @@
+<mvc:View controllerName="com.iodigitalsolutions.test.controller.Master" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+    <Shell id="shell">
+        <App id="app">
+            <pages>
+                <Page id="page1" class="sapUiContentPadding" title="{i18n>title} 1">
+                    <subHeader>
+                        <Toolbar>
+                            <Switch xmlns="sap.m"
+								state="false"
+								customTextOn="DE"
+								customTextOff="EN"
+								enabled="true"								
+								change="lang">
+                            </Switch>
+                            <ToolbarSpacer/>
+                            <Button text="{i18n>ClickToOpenDialog}" press="openPopup"/>
+                            <Button text="{i18n>ToPage2}" press="navPage2" />
+                        </Toolbar>
+                    </subHeader>
+                    <content>
+					</content>
+                </Page>
+
+                <Page id="page2" class="sapUiContentPadding" title="{i18n>title} 2" showNavButton="true" navButtonPress="navBack">
+                    <subHeader>
+                        <Toolbar>
+                            <ToolbarSpacer/>
+                            <Button  text="{i18n>ToPage3}" press="navPage3" />
+                        </Toolbar>
+                    </subHeader>
+                    <content>
+                        <FlexBox height="100%" alignItems="Center" justifyContent="Center">
+                            <items>
+                                <Image src="https://picsum.photos/400" />
+                            </items>
+                        </FlexBox>
+                    </content>
+                </Page>
+
+                <Page id="page3" class="sapUiContentPadding" title="{i18n>title} 3" showNavButton="true" navButtonPress="navBack">
+                    <subHeader>
+                        <Toolbar>
+                            <ToolbarSpacer/>
+                            <Button text="{i18n>ToPage4}" press="navPage4" />
+                        </Toolbar>
+                    </subHeader>
+                    <content>
+                        <Link id="Test" text="{i18n>ExternalPage}"   target=" " href="https://de.io-digitalsolutions.com/"></Link>
+                    </content>
+                </Page>
+
+                <Page id="page4" class="sapUiContentPadding" title="{i18n>title} 4" showNavButton="true" navButtonPress="navBack">
+                    <subHeader>
+                        <Toolbar>    
+                        </Toolbar>
+                    </subHeader>
+                    <content>
+                        <List  class="sapUiResponsiveMargin" width="auto" items="{superheros>/superHeros}">
+                            <headerToolbar>
+                                <Toolbar>
+                                    <Title text="Super hero squad"/>
+                                    <ToolbarSpacer/>
+                                    <Button text="{i18n>Load}" press="loadData"/>
+                                </Toolbar>
+                            </headerToolbar>
+                            <items>
+                                <StandardListItem title="{superheros>Name}" description="{superheros>secretIdentity}"></StandardListItem>
+                            </items>
+                        </List>
+                    </content>
+                </Page>
+            </pages>
+        </App>
+    </Shell>
+</mvc:View>
